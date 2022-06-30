@@ -17,4 +17,4 @@
 
 ### v1.0.0
 
-This is the first release of `promise-some`! See the [README](./README.md) for getting started.
+✨ This is the first release of `promise-some`! See the [README](./README.md) for getting started.
