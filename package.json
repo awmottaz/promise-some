@@ -10,6 +10,7 @@
     "compile-watch": "tsc --watch",
     "compile": "tsc",
     "fmt": "prettier --write .",
+    "prepublishOnly": "run-s compile fmt test",
     "test-watch": "ava --watch",
     "test": "ava"
   },
