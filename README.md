@@ -66,8 +66,10 @@ The steps for contributing are:
 3. Make your changes in the fork.
 4. Add or update tests as needed to cover the change.
 5. Update the [CHANGELOG](./CHANGELOG.md) file with your changes.
-6. Commit your changes.
-7. Open a Pull Request.
+6. Run `npm run compile` to update the compiled output.
+7. Run `npm run fmt` to format all source files.
+8. Commit your changes.
+9. Open a Pull Request.
 
 ### Commit message style
 
