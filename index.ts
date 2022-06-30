@@ -1,6 +1,6 @@
 interface PromiseSomeResult<T, U> {
   results: (T | undefined)[];
-  earlyExitResult: U | undefined;
+  signalResult: U | undefined;
   didExitEarly: boolean;
 }
 
@@ -9,11 +9,11 @@ async function PromiseSome<T, U>(
   signal: Promise<U>
 ): Promise<PromiseSomeResult<T, U>> {
   const results: (T | undefined)[] = new Array(promises.length);
-  let earlyExitResult: U | undefined = undefined;
+  let signalResult: U | undefined = undefined;
 
   const earlyExitToken = Symbol("PromiseSome early exit");
   const exitPromise = signal.then((result) => {
-    earlyExitResult = result;
+    signalResult = result;
     return earlyExitToken;
   });
 
@@ -28,7 +28,11 @@ async function PromiseSome<T, U>(
 
   const result = await Promise.race([exitPromise, allPromise]);
 
-  return { results, earlyExitResult, didExitEarly: result === earlyExitToken };
+  return {
+    results,
+    signalResult,
+    didExitEarly: result === earlyExitToken,
+  };
 }
 
 export default PromiseSome;
