@@ -6,7 +6,7 @@ interface PromiseSomeResult<T, U> {
 
 async function PromiseSome<T, U>(
   promises: Promise<T>[],
-  signal: Promise<U>
+  signal: Promise<U>,
 ): Promise<PromiseSomeResult<T, U>> {
   const results: (T | undefined)[] = new Array(promises.length);
   let signalResult: U | undefined = undefined;
@@ -23,7 +23,7 @@ async function PromiseSome<T, U>(
         results[idx] = result;
         return;
       });
-    })
+    }),
   );
 
   const result = await Promise.race([exitPromise, allPromise]);
