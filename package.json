@@ -1,0 +1,24 @@
+{
+  "name": "promise-some",
+  "version": "1.0.0",
+  "description": "Like Promise.all, but only as many as you've got time for",
+  "main": "index.mjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/awmottaz/promise-some.git"
+  },
+  "keywords": [
+    "JavaScript",
+    "TypeScript",
+    "Promise"
+  ],
+  "author": "Tony Mottaz <mail@tonymottaz.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/awmottaz/promise-some/issues"
+  },
+  "homepage": "https://github.com/awmottaz/promise-some#readme"
+}
