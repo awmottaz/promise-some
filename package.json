@@ -4,6 +4,7 @@
   "description": "Like Promise.all, but only as many as you've got time for",
   "main": "index.mjs",
   "scripts": {
+    "fmt": "prettier --write .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/awmottaz/promise-some/issues"
   },
-  "homepage": "https://github.com/awmottaz/promise-some#readme"
+  "homepage": "https://github.com/awmottaz/promise-some#readme",
+  "devDependencies": {
+    "prettier": "2.7.1"
+  }
 }
