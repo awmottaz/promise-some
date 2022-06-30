@@ -10,10 +10,10 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 function PromiseSome(promises, signal) {
     return __awaiter(this, void 0, void 0, function* () {
         const results = new Array(promises.length);
-        let earlyExitResult = undefined;
+        let signalResult = undefined;
         const earlyExitToken = Symbol("PromiseSome early exit");
         const exitPromise = signal.then((result) => {
-            earlyExitResult = result;
+            signalResult = result;
             return earlyExitToken;
         });
         const allPromise = Promise.all(promises.map((p, idx) => {
@@ -23,7 +23,11 @@ function PromiseSome(promises, signal) {
             });
         }));
         const result = yield Promise.race([exitPromise, allPromise]);
-        return { results, earlyExitResult, didExitEarly: result === earlyExitToken };
+        return {
+            results,
+            signalResult,
+            didExitEarly: result === earlyExitToken,
+        };
     });
 }
 export default PromiseSome;
