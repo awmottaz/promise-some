@@ -10,7 +10,6 @@
     "compile-watch": "tsc --watch",
     "compile": "tsc",
     "fmt": "prettier --write .",
-    "prepare": "husky install",
     "test-watch": "ava --watch",
     "test": "ava"
   },
