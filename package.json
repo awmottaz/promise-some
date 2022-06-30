@@ -2,8 +2,11 @@
   "name": "promise-some",
   "version": "1.0.0",
   "description": "Like Promise.all, but only as many as you've got time for",
-  "main": "index.mjs",
+  "main": "index.js",
+  "type": "module",
+  "types": "index.d.ts",
   "scripts": {
+    "compile": "tsc",
     "fmt": "prettier --write .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -23,6 +26,7 @@
   },
   "homepage": "https://github.com/awmottaz/promise-some#readme",
   "devDependencies": {
-    "prettier": "2.7.1"
+    "prettier": "2.7.1",
+    "typescript": "^4.7.4"
   }
 }
