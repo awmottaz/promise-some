@@ -6,13 +6,13 @@
   "type": "module",
   "types": "index.d.ts",
   "scripts": {
-    "compile": "tsc",
+    "compile-and-test": "npm-run-all compile --parallel compile-watch test-watch",
     "compile-watch": "tsc --watch",
+    "compile": "tsc",
     "fmt": "prettier --write .",
-    "ava": "ava",
-    "ava-watch": "ava --watch",
-    "test": "run-s compile ava",
-    "test-watch": "npm-run-all compile --parallel compile-watch ava-watch"
+    "prepare": "husky install",
+    "test-watch": "ava --watch",
+    "test": "ava"
   },
   "repository": {
     "type": "git",

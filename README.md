@@ -49,9 +49,11 @@ See the `examples` folder with more examples. You can run these yourself with `n
 
 To setup your local environment, clone this repo and run `npm install`.
 
-To run tests in watch mode, run `npm run test-watch`. See the `"scripts"` field in `package.json` for additional scripts to run.
+To compile the code and run tests in watch mode, run `npm run compile-and-test`.
 
-To compile the TypeScript source into `.js` and `.d.ts` files, run `npm run compile`.
+To compile the TypeScript source into `.js` and `.d.ts` files, run `npm run compile`, or `npm run compile-watch` to compile in watch mode.
+
+To run the tests, run `npm run test`,or `npm run test-watch` to run in watch mode. Note that tests run against the **compiled** output (`index.js`), _not_ the TypeScript source. The `compile-and-test` script handles this for you, but the `test` and `test-watch` scripts do not.
 
 ## Contributing
 
